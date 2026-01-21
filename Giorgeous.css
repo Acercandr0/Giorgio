@@ -442,3 +442,85 @@ div[data-test="query-suggestions"] {
 div[data-test="query-suggestions"] div[class*="_icon_"] {
     background: transparent;
 }
+
+/* =========================================================
+   MENUS & TOOLTIPS
+   ========================================================= */
+
+/* Context Menu */
+[class*="contextMenu"][role="menu"] {
+    position: relative;
+    background-color: transparent;
+    border: var(--border);
+    box-shadow: none;
+}
+
+[class*="contextMenu"][role="menu"]::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: var(--glass);
+    backdrop-filter: var(--blur);
+    border-radius: inherit;
+}
+
+[class*="contextMenu"][role="menu"] > * {
+    position: relative;
+}
+
+/* Submenus */
+[class*="_subMenu_"] {
+    position: relative;
+    background-color: transparent;
+    border: var(--border);
+    box-shadow: none;
+    overflow: hidden;
+    z-index: 0;
+}
+
+[class*="_subMenu_"]::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: var(--glass);
+    backdrop-filter: var(--blur);
+    border-radius: inherit;
+    z-index: 0;
+}
+
+[class*="_subMenu_"] > * {
+    position: relative;
+    z-index: 1;
+}
+
+[role="menu"][class*="_submenu"] {
+    background-color: var(--market-core-fill-black-color);
+    border: var(--border);
+    box-shadow: none;
+    z-index: 1;
+}
+
+[role="menu"][class*="_submenu"] > * {
+    position: relative;
+    z-index: 2;
+}
+
+/* Tooltips */
+[class*="_marketTooltipContainer_"] {
+    background-color: var(--glass);
+    backdrop-filter: var(--blur);
+    border: var(--border);
+    color: white;
+}
+
+[class*="_tooltipText_"] {
+    background-color: transparent;
+    backdrop-filter: var(--blur);
+    border: var(--border);
+    color: white;
+}
+
+[class*="_tooltipText_"]::after,
+[class*="_sidebarTooltip_"]::after {
+    display: none;
+}
