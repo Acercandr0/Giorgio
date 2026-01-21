@@ -21,7 +21,7 @@ A nostalgic electronic theme for Tidal.
     * Click on **Add Theme**.
     * Paste the following **Raw URL**:
     ```text
-    [https://raw.githubusercontent.com/Acercandr0/Giorgeous/main/Giorgeous.css](https://raw.githubusercontent.com/Acercandr0/Giorgeous/main/Giorgeous.css)
+    https://raw.githubusercontent.com/Acercandr0/Giorgeous/main/Giorgeous.css
     ```
 4.  **Auto-Updates:** This method keeps your theme updated! Tidaluna will automatically fetch changes from the repository.
 
