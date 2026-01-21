@@ -91,6 +91,11 @@ div[class*="_bar_"] button[class*="_button_"]:hover svg {
     padding-top: calc(var(--headerHeight) - 50px);
 }
 
+[class*="MuiContainer"] {
+    margin-top: 90px;
+    padding-bottom: var(--miniPlayerHeight);
+}
+
 /* =========================================================
    FOOTER PLAYER
    ========================================================= */
