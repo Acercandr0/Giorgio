@@ -1,0 +1,444 @@
+/* =========================================================
+   GIORGEOUS V.1.0
+   by Acercandr0
+   ========================================================= */
+
+/* =========================================================
+   GENERAL
+   ========================================================= */
+
+/* Change '--accent' to your favorite highlight color */
+:root {
+    --accent: rgb(126, 255, 154);
+    --border: solid 1px rgba(255,255,255,0.1);
+    --glass: rgba(30,30,30,0.7);
+    --blur: blur(45px) saturate(3);
+}
+
+/* Change 'wave-color-solid-accent-fill' too */
+* {
+   scrollbar-width: none !important;
+   font-family: "Doto", system-ui, sans-serif !important;
+   text-decoration: none !important;
+   --wave-color-solid-accent-fill: rgb(126, 255, 154);
+}
+
+.os-scrollbar {
+   display: none;
+}
+
+[class*="_divider_"] {
+    display: none;
+}
+
+#spotlighted-badge {
+    filter: none !important;
+}
+
+#spotlighted-badge * {
+    fill: var(--accent) !important;
+}
+
+
+
+[class*="marketPill"] {
+    border: var(--border);
+    background-color: var(--accent);
+    color: black;
+}
+
+h2 {
+    font-size: 30px !important;
+    font-weight: 500 !important;
+    text-transform: uppercase !important;
+    color: var(--accent) !important;
+}
+
+/* =========================================================
+   TITLEBAR + MAIN MAX SPACE
+   ========================================================= */
+
+[class*="_bar_"] {
+    border-bottom: var(--border);
+}
+
+div[class^="_bar_"] > div[class^="_title_"] * {
+    color: var(--accent)!important;
+}
+
+div[class*="_bar_"] button[class*="_button_"] {
+    background: transparent;
+}
+
+div[class*="_bar_"] button[class*="_button_"] svg {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+div[class*="_bar_"] button[class*="_button_"]:hover svg {
+    color: var(--accent);
+}
+
+#main {
+    height: 100svh;
+    max-height: calc(100svh - var(--os-title-bar-height));
+    margin-top: 0px;
+}
+
+.mainContent {
+    min-height: 100vh;
+    padding-bottom: var(--miniPlayerHeight);
+    margin-top: var(--headerHeight);
+    padding-top: calc(var(--headerHeight) - 50px);
+}
+
+/* =========================================================
+   FOOTER PLAYER
+   ========================================================= */
+
+[data-test="footer-player"] {
+    border-top: var(--border);
+    background-color: var(--glass) !important;
+    backdrop-filter: var(--blur);
+    box-shadow: 0 0 70px 50px rgba(0, 0, 0, 0.6) !important;
+}
+
+[class*='_knob_'] {
+    margin-left: -6px;
+    border-radius: 20%;
+    height: 10px;
+    width: 10px;
+    box-shadow: none;
+    margin-top: 1px;
+    background-color: var(--accent);
+}
+
+[class*="_progress_"] > [data-test="current-time"] {
+    color: var(--accent);
+}
+
+span[class="wave-text-description-demi"] {
+    text-transform: uppercase;
+    color: var(--accent);
+}
+
+[class*="imageryContainer"] {
+    position: absolute;
+    scale: 1.2;
+}
+
+div:has(> [class*="imageryContainer"]) {
+    position: relative !important;
+    overflow: visible !important;
+}
+
+[class*="imageryContainer"] [class*="imageBorder"] {
+    display: none;
+}
+
+[class*="_currentMediaItemDetails_"] {
+    margin-left: 82px;
+}
+
+[data-test*="media-state"] {
+    border-radius: var(--market-core-radius-100);
+}
+
+[aria-label="Shuffle"][aria-checked="true"], 
+[aria-label="Repeat"][aria-checked="true"], 
+[aria-label="Repeat one"][aria-checked="true"] {
+    border: var(--border);
+    border-radius: var(--market-core-radius-100) !important;
+}
+
+button[aria-label="Play queue"] {
+    height: 32px;
+    border-radius: var(--market-core-radius-100);
+}
+
+[aria-label="toggle now playing screen"] {
+    border-radius: var(--market-core-radius-100);
+}
+
+/* =========================================================
+   HEADERS
+   ========================================================= */
+
+#mainHeader {
+    margin-top: -1px;
+    border-bottom: var(--border);
+    background-color: var(--glass) !important;
+    backdrop-filter: var(--blur);
+    transition: margin-top 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+[data-type="search-field"] {
+    background-color: transparent;
+    border: var(--border);
+    border-radius: var(--market-core-radius-100);
+    box-shadow: none;
+}
+
+[class*="profilePicture"] {
+    border-radius: var(--market-core-radius-100);
+}
+
+/* =========================================================
+   CARDS
+   ========================================================= */
+
+[class*="cardContainer"] {
+    margin-left: -100vh;
+    margin-right: -100vh;
+    padding-left: 100vh;
+    padding-right: 100vh;
+    scroll-padding: 100vh;
+    padding-bottom: 20px;
+    overflow-y: hidden;
+}
+
+[class*="_card_"] [class*="imageContainer"] {
+    border-radius: var(--market-core-radius-100);
+    overflow: hidden;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    position: relative;
+    box-shadow: 0 0 0 0 var(--accent);
+    transition: 
+        transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+        box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+[class*="_card_"] [class*="imageContainer"] img {
+    transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform;
+}
+
+[class*="_card_"] [class*="_imageContainer_"]:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 0 4px var(--accent);
+}
+
+[class*="_card_"] [class*="_imageContainer_"]:hover img {
+    transform: scale(1.05);
+}
+[class^="_overlay_"] {
+    background: none;
+}
+
+[class*="_card_"] [class*="_imageContainer_"] [class*="round"] {
+    border-radius: var(--market-core-radius-100);
+}
+
+[class*="scrollingButton"] {
+    border-radius: var(--market-core-radius-100);
+    border: var(--border)
+}
+
+/* =========================================================
+   SHORTCUTS
+   ========================================================= */
+
+[data-test="shortcut-list"] {
+    row-gap: 12px;
+}
+
+[class*="_shortcutItem_"] {
+    position: relative;
+    box-shadow: none;
+    background-color: rgba(255, 255, 255, 0.03);
+    border: var(--border);
+    border-radius: var(--market-core-radius-100);
+    overflow: hidden;
+    transition: 
+        background-color 0.3s ease,
+        border 0.3s ease,
+        transform 0.5s cubic-bezier(0.3, 1.5, 0.6, 1);
+}
+
+[class*="_shortcutItem_"]:hover {
+    transform: scale(1.01) translateY(-1px);
+    background-color: color-mix(in srgb, var(--accent), transparent 92%);
+    border: 1px solid color-mix(in srgb, var(--accent), transparent 60%);
+}
+
+[class^="_playButtonContainer_"] button[class*="_playButton_"] {
+    display: none;
+}
+
+div[class*="_container_"][class*="_overlay_"]::before {
+    display: none;
+}
+
+/* =========================================================
+   SIDEBAR
+   ========================================================= */
+
+[class*="_sidebarWrapper_"]::after {
+    display: none;
+}
+
+[class*="_sidebarWrapper_"] {
+    border-right: var(--border);
+}
+
+[class*="_navigationItem_"] {
+    transition: none;
+    border-radius: var(--market-core-radius-100);
+    margin-top: 2px;
+}
+
+[class*="_navigationItem_"] svg {
+    fill: var(--accent);
+}
+
+[class*="_navigationItem_"][class*="selected"] {
+    background-color: color-mix(in srgb, var(--accent), transparent 90%);
+    border: var(--border);
+}
+
+[class*="_navigationItem_"]:hover {
+    border-radius: var(--market-core-radius-100) !important;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* =========================================================
+   ARTIST + ALBUM PAGES
+   ========================================================= */
+
+[class*="headerContainer"] [class*="background"] {
+    margin-top: calc(var(--headerHeight) - 10px);
+    padding-bottom: 35px;
+}
+
+[class*="backgroundBlur"] {
+    display: none;
+}
+
+h2[data-test='artist-name'] {
+    font-size: 50px !important;
+    color: var(--accent) !important;
+}
+
+[class*="marketButton"] {
+    border: var(--border);
+    background-color: transparent;
+    color: white;
+}
+
+[class*="dataContainer"]:before {
+    height: 100% !important;
+}
+
+[class^="_smallHeader_"] {
+    background-color: transparent;
+}
+
+[class^="_smallHeader_"]:before {
+    background-color: var(--glass);
+    backdrop-filter: var(--blur);
+    left: 0;
+    right: 0;
+    width: 100vw;
+}
+
+[class^="_smallHeader_"] [class*="tidal-ui__geometry"][class*="_coverArt_"] {
+    scale: 1.3;
+    box-shadow: none;
+    margin-right: 15px;
+}
+
+/* =========================================================
+   NOW PLAYING
+   ========================================================= */
+
+[class*="_nowPlayingContainer_"] {
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: var(--blur);
+}
+
+[class*="_bottomGradient_"] {
+    display: none;
+}
+
+[class*="_nativeRangeContainer_"] {
+    transform: translateY(-20px) scale(1.2);
+    background-color: var(--market-core-fill-black-color);
+    border: var(--border);
+    box-shadow: none;
+    overflow: hidden;
+}
+
+[class*="_nativeRange_"]::after {
+    display: none;
+}
+
+button[data-test="close-now-playing"],
+button[data-test="request-fullscreen"] {
+    background-color: transparent;
+    border: var(--border);
+}
+
+button[data-test="close-now-playing"]:hover,
+button[data-test="request-fullscreen"]:hover {
+    background-color: transparent;
+}
+
+figure[data-test="now-playing-image"] {
+    box-shadow: none;
+}
+
+[data-wave-color="textTertiary"] {
+    color: var(--accent);
+}
+/* =========================================================
+   PLAY QUEUE
+   ========================================================= */
+
+#playQueueSidebar {
+    margin-right: -2px;
+    border: var(--border);
+    background-color: var(--market-core-fill-black-color)
+}
+
+[aria-label="Clear play queue"],[aria-label="Create new playlist"] {
+    scale: 0.95;
+    border: var(--border);
+    background-color: var(--market-core-fill-black-color);
+}
+
+[class*="fxContainer"] {
+    overflow: visible;
+    border-radius: 0;
+}
+/* =========================================================
+   SEARCH
+   ========================================================= */
+
+div[data-test="search-results"] > div[class*="container"]::before {
+    display: none;
+}
+
+[data-test*="search-results"] > div[class*="container"] {
+    background-color: var(--glass);
+    backdrop-filter: var(--blur);
+    height: 100px;
+    padding-bottom: 20px;
+    margin-top: -90px;
+    margin-left: -5%;
+    margin-right: -5%;
+    padding-left: 5%;
+}
+
+[class*="searchPills"] {
+    margin-top: 65px;
+}
+
+div[data-test="query-suggestions"] {
+    background-color: var(--market-core-fill-black-color);
+    border: var(--border);
+    border-radius: var(--market-core-radius-100);
+}
+
+div[data-test="query-suggestions"] div[class*="_icon_"] {
+    background: transparent;
+}
